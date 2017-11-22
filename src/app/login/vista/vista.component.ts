@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { RestService} from '../rest.service';
 
 @Component({
   selector: 'app-vista',
@@ -6,24 +7,18 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
   styleUrls: ['./vista.component.css'],
 })
 export class VistaComponent implements OnInit {
-  user: User = {
-    username: 'irvinstone ',
-    password: 'leon'
+  user = {
+    username: null,
+    password: null
   };
 
-  constructor() {
+  constructor(private restService: RestService) {
   }
 
   ngOnInit() {
   }
   login(user) {
-    console.log(user);
-    console.log(this.user);
+    this.restService.login(user);
   }
 
-}
-
-class User {
-  public username;
-  public password;
 }
