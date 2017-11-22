@@ -1,0 +1,6 @@
+<p>
+  vista works! {{user.password}} {{user.username}}
+</p>
+<input  ([ngModel])="user.username" name="username">
+<input  ([ngModel])="user.password" name="password">
+<input type="submit" value="login" (click)="login(user)">
